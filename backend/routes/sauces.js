@@ -1,17 +1,21 @@
+//setup router
 const express = require('express');
 const router = express.Router();
-const sacuesCtrl = require('../controllers/sauces');
 
+//setup multer with token authorization
+const auth = require('../middleware/auth');
+const multer = require('../middleware/multer-config');
 
-router.post('/', sacuesCtrl.createSauce); 
+//require controller functions
+const saucesCtrl = require('../controllers/sauces');
 
-  router.get('/:id', sacuesCtrl.getOneSauce);
+//sets up endpoints for sauces 
+router.post('/', auth, multer, saucesCtrl.createSauce);
+router.get('/', auth, multer, saucesCtrl.getAllSauce);
+router.get('/:id', auth, saucesCtrl.getOneSauce);
+router.put('/:id', auth, multer, saucesCtrl.modifySauce);
+router.delete('/:id', auth, multer, saucesCtrl.deleteSauce);
+router.post('/:id/like', auth, saucesCtrl.updateLikeStatus);
 
-  router.put('/:id', sacuesCtrl.modifySauce);
-
-  router.delete('/:id', sacuesCtrl.deleteSauces);
-
-
-router.get('/', sacuesCtrl.getAllsauces);
-
+//export router
 module.exports = router;
