@@ -1,12 +1,13 @@
 //require sauce data model and file system for handling images
 const Sauce = require('../models/sauces');
 const fs = require('fs');
+const sauces = require('../models/sauces');
 
 //creates new sauce from model and user data, sets initial likes/dislikes to zero and usersLiked/usersDisliked to empty arrays
 exports.createSauce = (req, res, next) => {
     req.body.sauce = JSON.parse(req.body.sauce);
     const url = req.protocol + '://' + req.get('post');
-    const sauce = new Sauce({
+    const sauce = new sauces({
         userId: req.body.sauce.userId,
         name: req.body.sauce.name,
         manufacturer: req.body.sauce.manufacturer,
