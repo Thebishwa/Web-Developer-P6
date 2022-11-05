@@ -2,12 +2,11 @@
 const Sauce = require('../models/sauce');
 const fs = require('fs');
 
-
 //creates new sauce from model and user data, sets initial likes/dislikes to zero and usersLiked/usersDisliked to empty arrays
 exports.createSauce = (req, res, next) => {
     req.body.sauce = JSON.parse(req.body.sauce);
     const url = req.protocol + '://' + req.get('host');
-        const sauce = new sauces({
+        const Sauce = new Sauce({
         userId: req.body.sauce.userId,
         name: req.body.sauce.name,
         manufacturer: req.body.sauce.manufacturer,
@@ -18,7 +17,7 @@ exports.createSauce = (req, res, next) => {
         likes: 0,
         dislikes: 0,
         usersLiked: [],
-        usersDisliked: []
+        usersDisliked: [],
     });
     sauce.save()
         .then(
