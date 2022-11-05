@@ -11,7 +11,7 @@ const saucesCtrl = require('../controllers/sauces');
 
 //sets up endpoints for sauces 
 router.post('/', auth, multer, saucesCtrl.createSauce);
-router.get('/', auth, multer, saucesCtrl.getAllSauce);
+router.get('/', auth, multer, saucesCtrl.getAllSauces);
 router.get('/:id', auth, saucesCtrl.getOneSauce);
 router.put('/:id', auth, multer, saucesCtrl.modifySauce);
 router.delete('/:id', auth, multer, saucesCtrl.deleteSauce);
