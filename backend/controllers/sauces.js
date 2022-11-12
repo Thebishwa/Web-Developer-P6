@@ -164,7 +164,7 @@ exports.deleteSauce = (req, res, next) => {
         );
 };
 
-// updates likes, dislikes, usersLiked, and usersDisliked for selected sauce id
+// updates likes, dislikes from selected sauce id
 exports.updateLikeStatus = (req, res, next) => {
     // finds sauce of selected id
     let sauce = Sauce.findOne({

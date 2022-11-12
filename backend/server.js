@@ -1,4 +1,6 @@
+//create defult node package 
 const http = require('http');
+
 const app = require('./app');
 
 const normalizePort = val => {
@@ -34,7 +36,7 @@ const errorHandler = error => {
       throw error;
   }
 };
-
+//create our server
 const server = http.createServer(app);
 
 server.on('error', errorHandler);
