@@ -1,12 +1,12 @@
-//setup router
+//setup sauces router 
 const express = require('express');
 const router = express.Router();
 
-//setup multer with token authorization
+//import multer with token authorization functon from middleware 
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 
-//require controller functions
+//import Sauces functions from controllers
 const saucesCtrl = require('../controllers/sauces');
 
 //sets up endpoints for sauces 
@@ -17,5 +17,5 @@ router.put('/:id', auth, multer, saucesCtrl.modifySauce);
 router.delete('/:id', auth, multer, saucesCtrl.deleteSauce);
 router.post('/:id/like', auth, saucesCtrl.updateLikeStatus);
 
-//export router
+//navigate router
 module.exports = router;

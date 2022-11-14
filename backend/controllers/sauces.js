@@ -1,4 +1,4 @@
-//require sauce data model and file system for handling images
+//import sauce data model and file system for handling images
 const Sauce = require('../models/sauce');
 const fs = require('fs');
 

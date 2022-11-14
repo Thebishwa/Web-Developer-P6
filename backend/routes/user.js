@@ -1,8 +1,8 @@
-//sets up router
+//sets up user router
 const express = require('express');
 const router = express.Router();
 
-//require controller functions
+//import user functions from controllers 
 const userCtrl = require('../controllers/user');
 
 //sets up endpoints for user info

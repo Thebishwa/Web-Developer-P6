@@ -1,8 +1,11 @@
-//create defult node package 
-const http = require('http');
 
+//create defult node package containt our node server for our app
+const http = require('http');
+//import app
 const app = require('./app');
 
+
+// Adding port normalization, in the server to  handling error and basic logging to  Node server makes  app run more consistently and easier to debug.
 const normalizePort = val => {
   const port = parseInt(val, 10);
 
@@ -36,7 +39,7 @@ const errorHandler = error => {
       throw error;
   }
 };
-//create our server
+//create our server for the app
 const server = http.createServer(app);
 
 server.on('error', errorHandler);

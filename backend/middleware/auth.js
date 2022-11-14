@@ -1,3 +1,4 @@
+//create token base authenticaton for securing our app from unauthorized acess wiht GDPR and OWASP stander 
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {

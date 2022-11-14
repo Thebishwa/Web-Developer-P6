@@ -1,3 +1,5 @@
+
+//create data model for this app using Mongoose's  Schema  method which lets you create a data schema for our MongoDB database. for sauces routes.
 const mongoose = require('mongoose');
 //cerate data Schema
 const sauceSchema = mongoose.Schema({

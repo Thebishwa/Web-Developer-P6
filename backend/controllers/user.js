@@ -1,4 +1,4 @@
-//bcrypt for password hashing, jwt for token auth, and user model
+//bcrypt for password hashing, jwt for token auth, and user model export
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');

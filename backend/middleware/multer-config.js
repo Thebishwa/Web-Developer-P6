@@ -1,3 +1,5 @@
+
+//add multer for file handling request.
 const multer = require('multer');
 //set extension for file name
 const MIME_TYPES = {
